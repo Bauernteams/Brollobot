@@ -8,7 +8,7 @@ MobilePlatform::MobilePlatform(int lMotorPinA, int lMotorPinB, int lMotorPinPwm,
             m_leftMotor(lMotorPinA, lMotorPinB, lMotorPinPwm, lfFactorRpmToPwm),
             m_rightMotor(rMotorPinA, rMotorPinB, rMotorPinPwm, rfFactorRpmToPwm),
             m_leftLineSensor(lLineSensorPin), m_rightLineSensor(rLineSensorPin),
-            m_guiSpeed(50)
+            m_guiSpeed(100) //
 
 {
     QTimer *timer = new QTimer(this);

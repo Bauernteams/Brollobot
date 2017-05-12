@@ -2,15 +2,25 @@
 #include "ui_mainwindow.h"
 
 #include <QShortcut>
+#include <QDebug>
+
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
     // GUI initialisieren
+    qDebug() << "Initialize GUI" << endl;
     ui->setupUi(this);
+    emit sgn_setSpeed(ui->spinSpeed->value());
+
+    qDebug() << "Speed was set to: " << ui->spinSpeed->value() << endl;
+
+    // GUI inactivated (as long as run is noit clicked)
     pushButtonsEnable(false);
-    emit sgn_setSpeed(50);
+    chbFollowLineEnable(false);
+    chbLineSensorsEnable(false);
+
 //    // Set Shortcuts
 //    QShortcut *scForward = new QShortcut(QKeySequence(Qt::UpArrow), parent);
 //    connect(scForward, SIGNAL(activated()),
@@ -92,14 +102,20 @@ void MainWindow::on_btnLeft_released()
 void MainWindow::on_btnStartStop_clicked(bool state)
 {
 
+    qDebug() << state;
     if(!state)
     {
         pushButtonsEnable(false);
+
+        chbFollowLineEnable(false);
+        chbLineSensorsEnable(false);
+
         emit sgn_moveDirection(STOP);
     }
     else
     {
         pushButtonsEnable(true);
+        chbFollowLineEnable(true);
     }
 //    ui->btnStartStop->setText(text);
 }
@@ -116,6 +132,22 @@ void MainWindow::pushButtonsEnable(bool enable)
 //    {
 //        ui->spinSpeed->setValue(0);
 //    }
+}
+
+void MainWindow::chbFollowLineEnable(bool enable)
+{
+    ui->chbFollowLine->setEnabled(enable);
+
+    if (!enable)
+        ui->chbFollowLine->setChecked(false);
+
+}
+
+void MainWindow::chbLineSensorsEnable(bool enable)
+{
+    ui->chbLeftSensor->setEnabled(enable);
+    ui->chbRightSensor->setEnabled(enable);
+
 }
 
 
@@ -137,8 +169,11 @@ void MainWindow::on_chbFollowLine_toggled(bool checked)
     emit sgn_followLine(checked);
     if(checked)
     {
+        chbLineSensorsEnable(true);
         outputMessageText(QStringLiteral("Start following the line").arg(checked));
-    } else {
+    } else
+    {
+        chbLineSensorsEnable(false);
         outputMessageText(QStringLiteral("Stop following the line").arg(checked));
     }
 }
@@ -147,4 +182,10 @@ void MainWindow::slot_sensorDataUpdate(SensorData data)
 {
     ui->chbLeftSensor->setChecked(data.LeftSensorIsBlack);
     ui->chbRightSensor->setChecked(data.RightSensorIsBlack);
+}
+
+void MainWindow::on_actionQuit_triggered()
+{
+    emit sgn_moveDirection(STOP);
+    close();
 }

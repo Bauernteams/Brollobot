@@ -15,19 +15,18 @@ TEMPLATE = app
 SOURCES +=\
         mainwindow.cpp \
     controlsystem.cpp \
-    DcMotor.cpp \
-    LineSensor.cpp \
+    dcmotor.cpp \
+    linesensor.cpp \
     mobileplatform.cpp \
     tools.cpp \
     main.cpp
 
 HEADERS  += mainwindow.h \
     controlsystem.h \
-    DcMotor.h \
-    LineSensor.h \
+    dcmotor.h \
+    linesensor.h \
     mobileplatform.h \
     tools.h \
-    main.cppasd \
     SensorData.h
 
 FORMS    += mainwindow.ui

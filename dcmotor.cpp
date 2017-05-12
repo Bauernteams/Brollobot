@@ -1,4 +1,4 @@
-#include "DcMotor.h"
+#include "dcmotor.h"
 
 
 
@@ -36,7 +36,7 @@ DcMotor::DcMotor(int nPinA, int nPinB, int nPinPwm,
 
 DcMotor::~DcMotor()
 {
-    //! Destructor stops all Motors and Deletes Object
+    //! Destructor stops Motor and deletes Object
     this->stop();
 }
 

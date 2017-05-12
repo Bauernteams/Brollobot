@@ -415,9 +415,16 @@
      <x>0</x>
      <y>0</y>
      <width>656</width>
-     <height>27</height>
+     <height>19</height>
     </rect>
    </property>
+   <widget class="QMenu" name="menuMenu">
+    <property name="title">
+     <string>&amp;Menu</string>
+    </property>
+    <addaction name="actQuit"/>
+   </widget>
+   <addaction name="menuMenu"/>
   </widget>
   <widget class="QToolBar" name="mainToolBar">
    <attribute name="toolBarArea">
@@ -428,6 +435,17 @@
    </attribute>
   </widget>
   <widget class="QStatusBar" name="statusBar"/>
+  <action name="actQuit">
+   <property name="text">
+    <string>&amp;Quit</string>
+   </property>
+   <property name="toolTip">
+    <string>Quit Application</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+Q</string>
+   </property>
+  </action>
  </widget>
  <layoutdefault spacing="6" margin="11"/>
  <resources/>
@@ -439,12 +457,12 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>207</x>
-     <y>360</y>
+     <x>229</x>
+     <y>480</y>
     </hint>
     <hint type="destinationlabel">
-     <x>264</x>
-     <y>378</y>
+     <x>291</x>
+     <y>441</y>
     </hint>
    </hints>
   </connection>
@@ -455,8 +473,8 @@
    <slot>setValue(int)</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>283</x>
-     <y>386</y>
+     <x>291</x>
+     <y>441</y>
     </hint>
     <hint type="destinationlabel">
      <x>186</x>

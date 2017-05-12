@@ -47,9 +47,13 @@ private slots:
 
     void on_chbFollowLine_toggled(bool checked);
 
+    void on_actionQuit_triggered();
+
 private:
     Ui::MainWindow *ui;
     void pushButtonsEnable(bool enable);
+    void chbFollowLineEnable(bool enable);
+    void chbLineSensorsEnable(bool enable);
 };
 
 #endif // MAINWINDOW_H
