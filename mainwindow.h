@@ -3,7 +3,7 @@
 
 #include <QMainWindow>
 
-#include "SensorData.h"
+#include "sensordata.h"
 
 namespace Ui {
 class MainWindow;

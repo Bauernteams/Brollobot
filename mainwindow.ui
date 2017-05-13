@@ -171,6 +171,9 @@
            <property name="shortcut">
             <string>Down</string>
            </property>
+           <property name="autoRepeat">
+            <bool>true</bool>
+           </property>
            <property name="toolButtonStyle">
             <enum>Qt::ToolButtonTextUnderIcon</enum>
            </property>
@@ -215,6 +218,9 @@
            <property name="shortcut">
             <string>Left</string>
            </property>
+           <property name="autoRepeat">
+            <bool>true</bool>
+           </property>
            <property name="toolButtonStyle">
             <enum>Qt::ToolButtonTextUnderIcon</enum>
            </property>
@@ -258,6 +264,9 @@
            </property>
            <property name="shortcut">
             <string>Right</string>
+           </property>
+           <property name="autoRepeat">
+            <bool>true</bool>
            </property>
            <property name="toolButtonStyle">
             <enum>Qt::ToolButtonTextUnderIcon</enum>
@@ -310,6 +319,13 @@
        <item>
         <layout class="QHBoxLayout" name="horizontalLayout_3">
          <item>
+          <widget class="QLabel" name="label_2">
+           <property name="text">
+            <string>Forward Speed:</string>
+           </property>
+          </widget>
+         </item>
+         <item>
           <spacer name="horizontalSpacer_3">
            <property name="orientation">
             <enum>Qt::Horizontal</enum>
@@ -331,10 +347,10 @@
             <number>300</number>
            </property>
            <property name="singleStep">
-            <number>5</number>
+            <number>2</number>
            </property>
            <property name="pageStep">
-            <number>15</number>
+            <number>5</number>
            </property>
            <property name="value">
             <number>100</number>
@@ -347,19 +363,6 @@
            </property>
            <property name="notchesVisible">
             <bool>true</bool>
-           </property>
-          </widget>
-         </item>
-         <item>
-          <widget class="QSpinBox" name="spinSpeed">
-           <property name="maximum">
-            <number>300</number>
-           </property>
-           <property name="singleStep">
-            <number>5</number>
-           </property>
-           <property name="value">
-            <number>50</number>
            </property>
           </widget>
          </item>
@@ -378,6 +381,26 @@
             </size>
            </property>
           </spacer>
+         </item>
+         <item>
+          <widget class="QSpinBox" name="spinSpeed">
+           <property name="maximum">
+            <number>300</number>
+           </property>
+           <property name="singleStep">
+            <number>5</number>
+           </property>
+           <property name="value">
+            <number>50</number>
+           </property>
+          </widget>
+         </item>
+         <item>
+          <widget class="QLabel" name="label">
+           <property name="text">
+            <string>[cm/s]</string>
+           </property>
+          </widget>
          </item>
         </layout>
        </item>

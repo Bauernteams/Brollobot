@@ -8,7 +8,7 @@ MobilePlatform::MobilePlatform(int lMotorPinA, int lMotorPinB, int lMotorPinPwm,
             m_leftMotor(lMotorPinA, lMotorPinB, lMotorPinPwm, lfFactorRpmToPwm),
             m_rightMotor(rMotorPinA, rMotorPinB, rMotorPinPwm, rfFactorRpmToPwm),
             m_leftLineSensor(lLineSensorPin), m_rightLineSensor(rLineSensorPin),
-            m_guiSpeed(50)
+            m_guiSpeed(100) //
 
 {
     QTimer *timer = new QTimer(this);
@@ -119,8 +119,8 @@ void MobilePlatform::slot_checkLineSensors()
 {
     m_leftLineSensorIsBlack = m_leftLineSensor.isBlack();
     m_rightLineSensorIsBlack = m_rightLineSensor.isBlack();
-    qDebug() << "Sensor states are: LeftSensor - " << m_leftLineSensorIsBlack << " - RightSensor - " << m_rightLineSensorIsBlack << endl;
-    emit sgn_sendText(QStringLiteral("LeftSensor: %1. - RightSensor: %1.").arg(m_leftLineSensorIsBlack, m_rightLineSensorIsBlack));
+    qDebug() << "Sensor states are:" << QStringLiteral("LeftSensor: %1 - RightSensor: %2").arg(m_leftLineSensorIsBlack).arg(m_rightLineSensorIsBlack) << endl;
+//    emit sgn_sendText(QStringLiteral("LeftSensor: %1 - RightSensor: %2").arg(m_leftLineSensorIsBlack).arg(m_rightLineSensorIsBlack));
 }
 
 void MobilePlatform::slot_update()

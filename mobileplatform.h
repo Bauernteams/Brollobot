@@ -1,9 +1,9 @@
 #ifndef MOBILEPLATFORM_H
 #define MOBILEPLATFORM_H
 
-#include "DcMotor.h"
-#include "LineSensor.h"
-#include "SensorData.h"
+#include "dcmotor.h"
+#include "linesensor.h"
+#include "sensordata.h"
 #include <cmath>
 
 #include <QObject>

@@ -66,7 +66,7 @@ class DcMotor
 
 
         // Private Methods
-        bool initAttributes(float fFactorRpmToVoltage, float fMotorVoltage_Max, float fMotorDriverVoltage_Max, int nPwmMax=255);          //TODO
+        bool initAttributes(float fFactorRpmToVoltage, float fMotorVoltage_Max, float fMotorDriverVoltage_Max, int nPwmMax=100);          //TODO
         bool initPins(int nPinA, int nPinB, int nPinPwm);
 
         bool actionMotor();

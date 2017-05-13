@@ -1,7 +1,7 @@
 #include <iostream>
 #include <wiringPi.h>
 
-#include "LineSensor.h"
+#include "linesensor.h"
 
 LineSensor::LineSensor(int nPin)
 {

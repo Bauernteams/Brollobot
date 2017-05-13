@@ -36,7 +36,7 @@ DcMotor::DcMotor(int nPinA, int nPinB, int nPinPwm,
 
 DcMotor::~DcMotor()
 {
-    //! Destructor stops Motor and deletes Object
+    //! Destructor stops DcMotor and deletes its Object
     this->stop();
 }
 

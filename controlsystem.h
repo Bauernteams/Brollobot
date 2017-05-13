@@ -10,7 +10,7 @@ class ControlSystem : public QObject
 {
     Q_OBJECT
 public:
-    explicit ControlSystem(MobilePlatform *mobilePlatform, MainWindow *mainWindow,QObject *parent = 0);
+    explicit ControlSystem(MobilePlatform *mobilePlatform, MainWindow *mainWindow, QObject *parent = 0);
 
 private:
     MobilePlatform *m_mobilePlatform;

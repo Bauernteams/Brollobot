@@ -19,7 +19,8 @@ SOURCES +=\
     linesensor.cpp \
     mobileplatform.cpp \
     tools.cpp \
-    main.cpp
+    main.cpp \
+
 
 HEADERS  += mainwindow.h \
     controlsystem.h \
@@ -27,7 +28,9 @@ HEADERS  += mainwindow.h \
     linesensor.h \
     mobileplatform.h \
     tools.h \
-    SensorData.h
+    sensordata.h \
+
+
 
 FORMS    += mainwindow.ui
 
